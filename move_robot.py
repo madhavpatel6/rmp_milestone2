@@ -20,8 +20,8 @@ def getXY(node_number):
 
 
 def getXY(node_number):
-    grid_size_x = rospy.get_param('/grid_size_x') + 1
-    grid_size_y = rospy.get_param('/grid_size_y') + 1
+    grid_size_x = rospy.get_param('/grid_size_x')
+    grid_size_y = rospy.get_param('/grid_size_y')
     grid_step = rospy.get_param('/grid_step')
     x = int((node_number - 1) / (grid_size_y * grid_step)) - math.floor(grid_size_x / 2.0) + 1 - grid_size_x % 2
     y = (node_number - 1) % (grid_size_y * grid_step) - math.floor(grid_size_y / 2.0) + 1 - grid_size_y % 2

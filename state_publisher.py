@@ -75,8 +75,8 @@ def getNodeNumber(currX,currY):
     return node_number'''
 
 def getNodeNumber(currX, currY):
-    grid_size_x = rospy.get_param('/grid_size_x') + 1
-    grid_size_y = rospy.get_param('/grid_size_y') + 1
+    grid_size_x = rospy.get_param('/grid_size_x')
+    grid_size_y = rospy.get_param('/grid_size_y')
     grid_step = rospy.get_param('/grid_step')
     dx = currX + math.floor(float(grid_size_x) / 2.0) - 1 + grid_size_x % 2
     dy = currY + math.floor(float(grid_size_y) / 2.0) - 1 + grid_size_y % 2
@@ -96,8 +96,8 @@ if __name__ == '__main__':
 
 
     while not rospy.is_shutdown():
-        grid_size_x = rospy.get_param('/grid_size_x') + 1
-        grid_size_y = rospy.get_param('/grid_size_y') + 1
+        grid_size_x = rospy.get_param('/grid_size_x')
+        grid_size_y = rospy.get_param('/grid_size_y')
         grid_step = rospy.get_param('/grid_step')
         x_min = - math.floor(grid_size_x / 2.0) + 1 - grid_size_x % 2
         x_max = math.floor(grid_size_x / 2.0)
